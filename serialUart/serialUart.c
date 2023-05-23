@@ -53,3 +53,10 @@ uint8_t existeCaracter(void)
     }
 }
 //leerCaracter()
+
+uint8_t leerCaracter(void)
+{
+    while (!(USART1->SR & (1 << 5)));
+    return USART1->DR & 0xFF;
+}
+
